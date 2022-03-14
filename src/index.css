@@ -1,0 +1,33 @@
+/* FUENTE UTILIZADA */
+@import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
+
+
+body{
+  font-family: 'Convergence', sans-serif;
+  background-color: var(--color-5);
+  
+
+}
+/* VARIBLES DE COLOR */
+:root {
+  --color-primario: #3f1934;
+  --color-2: #A74165;
+  --color-3: #8F5C21;
+  --color-4: #8E557B;
+  --color-5: #D698C1;
+}
+
+.App{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+

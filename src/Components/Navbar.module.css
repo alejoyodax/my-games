@@ -1,0 +1,33 @@
+
+
+.header{
+    /* TAMÑO */
+    width: 100%;
+    min-height: 3.5rem;
+    padding: 0rem 1.5rem;
+
+
+    background-color: var(--color-primario);
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    
+}
+
+.headerGameList{
+    display: flex;
+    justify-content: space-around;
+}
+
+.linkGame{
+    margin: 0 1rem;
+    color: white;
+}
+.linkGame:hover{
+    color: var(--color-5);
+    
+}
