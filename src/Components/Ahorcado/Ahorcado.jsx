@@ -1,11 +1,14 @@
-
+import EstadoPalabra from "./EstadoPalabra";
+import Teclado from "./Teclado";
 
 
 function Ahorcado() {
     return (
-        <div>
-            <h1>Ahorcado</h1>
-        </div>
+        <div className="container" >
+
+            <EstadoPalabra />
+            <Teclado />
+        </div >
     );
 }
 

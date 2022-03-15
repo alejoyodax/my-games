@@ -6,7 +6,7 @@ function Navbar() {
 
     return (
         <nav className={ styles.header }>
-            <span>LOGO</span>
+            <span className={ styles.logo } >LOGO</span>
             <div className={ styles.headerGameList }>
 
                 <Link to="/ahorcado" style={ { textDecoration: 'none' } }>
@@ -23,7 +23,7 @@ function Navbar() {
 
             </div>
             <div>
-                <span>alejoyodax</span>
+                <span className={ styles.loginButton } >alejoyodax</span>
             </div>
         </nav >
 

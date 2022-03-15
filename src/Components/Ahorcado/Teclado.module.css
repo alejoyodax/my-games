@@ -1,0 +1,44 @@
+.Teclado{
+    margin: 0;
+    /* TAMAÑO DEL TECLADO */
+    width: 100%;
+    max-width: 550px;
+
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    /* BORDE */
+    /* border: 1px solid black; */
+}
+
+.filaDeLetras{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.filaDeLetras4{
+    flex-direction: row;
+}
+
+.Teclado > div > button{
+    width: 3rem;
+    height: 3rem;
+
+    border: 2px solid var(--color-primario);
+    margin: 2px;
+
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Teclado > div > button:hover{
+    background-color: var(--color-primario);
+    color: white;
+    border-color: white;
+    border-radius: 5px;
+
+}
+
