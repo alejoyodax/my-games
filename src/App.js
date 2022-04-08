@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // IMPORTAMOS LOS COMPONENTES NECESARIOS
@@ -13,26 +13,12 @@ function App() {
 
     <div className="App">
       <Navbar />
-      <Route exact
-        path='/'
-        component={ Ahorcado }
-      />
-
-      <Route
-        path='/ahorcado'
-        component={ Ahorcado }
-      />
-
-      <Route
-        path='/sudoku'
-        component={ Sudoku }
-      />
-
-      <Route
-        path='/triki'
-        component={ Triki }
-      />
-
+      <Switch>
+        <Route exact path='/' component={ Ahorcado } />
+        <Route path='/ahorcado' component={ Ahorcado } />
+        <Route path='/sudoku' component={ Sudoku } />
+        <Route path='/triki' component={ Triki } />
+      </Switch>
     </div>
 
   );

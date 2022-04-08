@@ -1,7 +1,28 @@
+import styles from "./EstadoPalabra.module.css"
+import { useState } from "react";
 
-export default function EstadoPalabra({ arrayPalabra }) {
+function ContenedorLetra(props) {
+    const letra = props.letra;
     return (
-        <div>A __ __ J __</div>
+        <div className={ styles.contenedorLetra }
+        >
+            { letra ? letra : "" }
+        </div>
+    )
+}
+
+
+function EstadoPalabra({ letrasAdivinadas }) {
+    // letrasAdivinadas --> ARRAY
+    return (
+        <div className={ styles.estadoPalabra }>
+            { letrasAdivinadas.map((letra, index) =>
+                (<ContenedorLetra letra={ letra } key={ letra + index } />)
+            ) }
+        </div>
     )
 
 }
+
+
+export default EstadoPalabra

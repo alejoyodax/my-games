@@ -1,14 +1,31 @@
 import styles from "./Teclado.module.css"
+import { useState } from "react";
 
 
+function Teclado(props) {
+    const [letrasDesactivadas, setletrasDesactivadas] = useState({});
 
-function Tecla({ letra }) {
-    return (
-        <button>{ letra }</button>
-    )
-}
+    const desactivarBoton = (letra) => {
+        props.verificarLetraPulsada(letra)
+        console.log(letra);
+        setletrasDesactivadas({
+            ...letrasDesactivadas,
+            [letra]: true
+        })
+    }
 
-function Teclado() {
+    function Tecla({ letra, onClick }) {
+        return (
+            <button
+                disabled={ letrasDesactivadas[letra] }
+                onClick={ () => onClick(letra) }
+            >
+                { letra }
+            </button>
+        )
+    }
+
+
     // OBJETO CON LAS FILAS DE LAS TECLAS DEL JUEGO
     const letrasTeclado = {
         fila1: ["A", "B", "C", "D", "E", "F", "G"],
@@ -17,10 +34,10 @@ function Teclado() {
         fila4: ["U", "V", "W", "X", "Y", "Z"]
     }
     // FILAS DE BOTONES QUE REPRESENTAN LAS TECLAS
-    const f1 = letrasTeclado.fila1.map((l, index) => <Tecla key={ index } letra={ l } />)
-    const f2 = letrasTeclado.fila2.map((l) => <Tecla letra={ l } />)
-    const f3 = letrasTeclado.fila3.map((l) => <Tecla letra={ l } />)
-    const f4 = letrasTeclado.fila4.map((l) => <Tecla letra={ l } />)
+    const f1 = letrasTeclado.fila1.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ desactivarBoton } />)
+    const f2 = letrasTeclado.fila2.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ desactivarBoton } />)
+    const f3 = letrasTeclado.fila3.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ desactivarBoton } />)
+    const f4 = letrasTeclado.fila4.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ desactivarBoton } />)
 
     return (
         <div className={ styles.Teclado }  >
