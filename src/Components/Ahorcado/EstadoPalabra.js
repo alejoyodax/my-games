@@ -3,12 +3,19 @@ import { useState } from "react";
 
 function ContenedorLetra(props) {
     const letra = props.letra;
+    const containerLetra = styles.contenedorLetra
+    const containerLetraOculto = styles.contenedorLetraOculto
+
     return (
-        <div className={ styles.contenedorLetra }
+        <div className={ letra === " " ? containerLetraOculto : containerLetra }
         >
             { letra ? letra : "" }
         </div>
     )
+
+
+
+
 }
 
 

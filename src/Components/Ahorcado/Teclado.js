@@ -1,23 +1,18 @@
 import styles from "./Teclado.module.css"
 import { useState } from "react";
 
+function qitarTildes(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+}
 
 function Teclado(props) {
-    const [letrasDesactivadas, setletrasDesactivadas] = useState({});
-
-    const desactivarBoton = (letra) => {
-        props.verificarLetraPulsada(letra)
-        console.log(letra);
-        setletrasDesactivadas({
-            ...letrasDesactivadas,
-            [letra]: true
-        })
-    }
+    const verificarEstadoJuego = props.verificarEstadoJuego;
+    const letrasDesactivadas = props.letrasDesactivadas;
 
     function Tecla({ letra, onClick }) {
         return (
             <button
-                disabled={ letrasDesactivadas[letra] }
+                disabled={ letrasDesactivadas[qitarTildes(letra)] }
                 onClick={ () => onClick(letra) }
             >
                 { letra }
@@ -34,10 +29,10 @@ function Teclado(props) {
         fila4: ["U", "V", "W", "X", "Y", "Z"]
     }
     // FILAS DE BOTONES QUE REPRESENTAN LAS TECLAS
-    const f1 = letrasTeclado.fila1.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ desactivarBoton } />)
-    const f2 = letrasTeclado.fila2.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ desactivarBoton } />)
-    const f3 = letrasTeclado.fila3.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ desactivarBoton } />)
-    const f4 = letrasTeclado.fila4.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ desactivarBoton } />)
+    const f1 = letrasTeclado.fila1.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ verificarEstadoJuego } />)
+    const f2 = letrasTeclado.fila2.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ verificarEstadoJuego } />)
+    const f3 = letrasTeclado.fila3.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ verificarEstadoJuego } />)
+    const f4 = letrasTeclado.fila4.map((l, index) => <Tecla key={ index + l } letra={ l } onClick={ verificarEstadoJuego } />)
 
     return (
         <div className={ styles.Teclado }  >

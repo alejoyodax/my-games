@@ -5,7 +5,7 @@
 body{
   font-family: 'Convergence', sans-serif;
   background-color: var(--color-5);
-  margin: 0;
+  margin: 0px;
 
 }
 /* VARIBLES DE COLOR */
@@ -14,9 +14,11 @@ body{
   --color-p2: #3a4149;
   --color-2: #A74165;
   --color-3: #00777A;
-  --color-4: #8E557B;
+  --color-4: #4e1b39;
   --color-5: #181e25;
   --color-6: #D6F4FF;
+
+  --color-blue1: #3b32b4;
 }
 
 /* VARIABLES */
@@ -27,10 +29,11 @@ body{
 .App{
   height: 100%;
   width: 100%;
+  margin: 0;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 
   align-items: center;
 }
